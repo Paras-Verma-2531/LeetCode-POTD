@@ -1,0 +1,14 @@
+# April 2, 2025
+
+## 2873.Maximum Value of Ordered Triplet
+
+```java
+public long maximumTripletValue(int[] nums) {
+        long maxDifference = 0, maxElement =0, maxTriplet = 0;
+        for (int num : nums) {
+            maxTriplet = Math.max(maxTriplet, maxDifference * (long)num);
+            maxDifference = Math.max(maxDifference, maxElement - num);
+            maxElement = Math.max(maxElement, num);
+        }
+        return maxTriplet;
+    }
